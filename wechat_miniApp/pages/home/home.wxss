@@ -1,1 +1,7 @@
 /* pages/home/home.wxss */
+.top-theme{
+    width:100%;  /*if u can use 100%, don't use 750 rpx*/
+    height: 260rpx;
+}
+
+/* option+command+L */

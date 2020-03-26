@@ -1,3 +1,6 @@
+import { config } from "../../config/config"
+import { Theme } from "../../model/theme"
+
 // pages/home/home.js
 Page({
 
@@ -5,46 +8,29 @@ Page({
    * Page initial data
    */
   data: {
-
+    topTheme: null,
   },
 
   /**
-   * Lifecycle function--Called when page load
+   * Lifecycle function--listening when page load
+   * JS 类型的约束
+   * 业务逻辑
+   * 数据绑定
+   * view视图层 业务逻辑层 桥梁 中间层
+   * mvc C controller
+   * Model, Logic, Service
+   * Service, Manager,  
    */
   onLoad: function (options) {
-
+    Theme.getHomeLocationA(data => {
+      this.setData({
+        topTheme: data[0]
+      })
+    })
   },
 
   /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
+   * Page event handler function--listening when user drop down
    */
   onPullDownRefresh: function () {
 
