@@ -1,5 +1,6 @@
 import { config } from "../../config/config"
 import { Theme } from "../../model/theme"
+import { Banner } from "../../model/banner"
 
 // pages/home/home.js
 Page({
@@ -8,7 +9,8 @@ Page({
    * Page initial data
    */
   data: {
-    topTheme: null,
+    themeA: null,
+    bannerB: null,
   },
 
   /**
@@ -21,20 +23,18 @@ Page({
    * Model, Logic, Service
    * Service, Manager,  
    */
-  onLoad: async function (options) {
+  async onLoad(options) {
     //在这里使用 async and await 就不需要 callback function
-    const data = await Theme.getHomeLocationA()
-    console.log(data)
+    this.initAllData()
+  },
+
+  async initAllData() {
+    const themeA = await Theme.getHomeLocationA()
+    const bannerB = await Banner.getHomeLocationB()
     this.setData({
-      topTheme: data[0]
+      themeA: themeA[0],
+      bannerB
     })
-
-
-    // Theme.getHomeLocationA(data => {
-    //   this.setData({
-    //     topTheme: data[0]
-    //   })
-    // })
   },
 
   /**
