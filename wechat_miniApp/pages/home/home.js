@@ -21,12 +21,20 @@ Page({
    * Model, Logic, Service
    * Service, Manager,  
    */
-  onLoad: function (options) {
-    Theme.getHomeLocationA(data => {
-      this.setData({
-        topTheme: data[0]
-      })
+  onLoad: async function (options) {
+    //在这里使用 async and await 就不需要 callback function
+    const data = await Theme.getHomeLocationA()
+    console.log(data)
+    this.setData({
+      topTheme: data[0]
     })
+
+
+    // Theme.getHomeLocationA(data => {
+    //   this.setData({
+    //     topTheme: data[0]
+    //   })
+    // })
   },
 
   /**
