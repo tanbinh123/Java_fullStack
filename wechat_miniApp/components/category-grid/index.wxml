@@ -1,13 +1,17 @@
 <view class="container">
-	<l-grid>
+	<!-- l-grid 是自定义组件， 必须用外部样式类，类似于插槽, 使用l-class-->
+	<l-grid l-class="inner-container">
 		<block wx:for="{{grid}}">
-			<l-grid-item>
-				<view>
-					<image src="{{item.img}}" />
-					<text>{{item.title}}</text>
+			<l-grid-item key="{{index}}" slot="{{index}}">
+				<view class="grid-item">
+					<image class="img" src="{{item.img}}" />
+					<!-- <text class="text">{{item.title}}</text> -->
+					<text class="text">dress</text>
 				</view>
 			</l-grid-item>
 		</block>
 	</l-grid>
 </view>
+
+<!-- item 代表小程序里的数组元素，index 代表小程序里的序号 -->
 
