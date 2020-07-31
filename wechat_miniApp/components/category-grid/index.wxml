@@ -5,8 +5,8 @@
 			<l-grid-item key="{{index}}" slot="{{index}}">
 				<view class="grid-item">
 					<image class="img" src="{{item.img}}" />
-					<!-- <text class="text">{{item.title}}</text> -->
-					<text class="text">dress</text>
+					<text class="text">{{item.title}}</text>
+					<!-- <text class="text">dress</text> -->
 				</view>
 			</l-grid-item>
 		</block>
